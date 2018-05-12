@@ -12,7 +12,7 @@
 	<body>
 	<?php
         // code here
-        include_once 'class_example5.php';
+        include_once 'cloning.php';
 	?>
 	</body>
 </html>

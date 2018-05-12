@@ -4,8 +4,8 @@ class Person {
 	
 	var $first_name;
 	var $last_name;
-	
-	var $arm_count = 2;
+	static $x=1;
+        var $arm_count = 2;
 	var $leg_count = 2;
 	
 	function say_hello() {
@@ -30,8 +30,9 @@ echo $person->full_name() ."<br />";
 echo $new_person->full_name() ."<br />";
 
 $vars = get_class_vars('Person');
+ echo "<br />Class ".get_class($person)." Properties: <br />";
 foreach($vars as $var => $value) {
-	echo "{$var}: {$value}<br />";
+	echo "{$var}: {$value} <br />";
 }
 
 echo property_exists('Person', 'first_name') ? 'true' : 'false';
