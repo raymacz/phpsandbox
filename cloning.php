@@ -20,8 +20,8 @@ echo "<br />";
 
 $c = clone $a;
 $c->name = "orange juice";
-echo $a->name;
+//echo $a->name;
 echo "<br />";
-echo $c->name;
+//echo $c->name;
 
 ?>

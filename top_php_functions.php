@@ -27,6 +27,7 @@ printf($format, $args);
 date($format, $timestamp);
 getdate($timestamp);
 gmdate($format);
+checkdate($month, $day, $year);
 mktime($hour, $minute, $second, $month, $day, $year, $is_dst);
 time();
 idate($format);
@@ -158,12 +159,15 @@ var_export($expression, $return);
 
 
 get_class($object);
+get_class_methods($class_name);
 class_exists($class_name);
 call_user_func($callback);
 method_exists($object, $method_name);
 get_object_vars($object);
+property_exists($class, $property);
 
-function_exists($function_name);
+
+        function_exists($function_name);
 func_get_arg($arg_num);
 
 
@@ -207,7 +211,7 @@ realpath($path);
 setcookie($name, $value);
 sha1($str);
 
-unset();
+unset($a);
 
 print_r();
 var_dump($expression);
@@ -216,6 +220,24 @@ die();
 exit();
 
 
+//reference assignment/returns symbols 
+$b = $a; // '==='
+$b =& $a;
+function ref_test(&$var) {};
+$a =& ref_return();
+function &ref_return() {return $a;};
+
+// constructors & cloning
+function __construct() {};
+$a = new Clazz();
+function __clone() {};
+$a = clone $b;  // '=='
+
+//server variables (server_variables.php)
+$a = $_SERVER['SERVER_NAME'];
+
+// variable_variables.php
+$$a;
 
 
 
