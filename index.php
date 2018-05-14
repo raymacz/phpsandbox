@@ -1,7 +1,7 @@
 <?php
 
 /* 
- * A simple sandbox.
+ * A simple sandbox. https://stackoverflow.com/questions/1738865/initialize-objects-like-arrays-in-php
  */
 ?>
 
@@ -12,7 +12,8 @@
 	<body>
 	<?php
         // code here
-        include_once 'variable_variables.php';
+        include_once 'array_object_sbox.php';
+                   
 	?>
 	</body>
 </html>

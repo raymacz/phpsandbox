@@ -239,6 +239,9 @@ $a = $_SERVER['SERVER_NAME'];
 // variable_variables.php
 $$a;
 
+//Initialize array & Objects //for more info refer to 'array_object_sbox.php' sandbox
+$array[] = new stdClass(array(new stdClass()));
+
 
 
 ?>
