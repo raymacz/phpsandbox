@@ -138,6 +138,7 @@ array_search($needle, $haystack);
 array_reverse($array, $preserve_keys);
 array_map($callback, $array1);
 array_diff($array1, $array2);
+array_values($array);
 extract($array);
 in_array($needle, $haystack);
 array_key_exists($key, $array);
