@@ -12,8 +12,10 @@
 	<body>
 	<?php
         // code here
-        include_once 'array_object_sbox.php';
-                   
-	?>
+        include_once 'aaa_array_object_sbox.php';
+
+        $x = create_function('$args', 'echo "hi! value: {$args}"; echo nl2br(" NICE!!!");'); 
+        $x("raymacz76");
+	?> 
 	</body>
 </html>

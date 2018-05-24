@@ -22,7 +22,7 @@ phpinfo();
 echo '';
 print '';
 printf($format, $args);
-
+PHP_EOL;
         
 date($format, $timestamp);
 getdate($timestamp);
@@ -48,7 +48,8 @@ json_decode($json);
 json_encode($value);
 xml_parse($parser, $data);
 
-
+create_function($args, $code);
+//$x = create_function('$args', 'echo "hi! value: {$args}"; echo nl2br(" NICE!!!");'); $x("raymacz76");
 
 preg_match($pattern, $subject);
 preg_match_all($pattern, $subject, $matches);
@@ -82,8 +83,8 @@ strip_tags($str);
 addslashes($str);
 ucfirst($str);
 ucwords($str);
-
-
+var_export($expression, $return);
+nl2br($string);
 
 define($name, $value);
 defined($name);
@@ -156,7 +157,7 @@ pos($arg);
 next($array);
 prev($array);
 range($start, $end);
-var_export($expression, $return);
+
 
 
 get_class($object);
