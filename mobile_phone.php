@@ -1,40 +1,44 @@
 <?php
 
-class A {
-  static $a=1;
 
-  static function modified_a() {
-    return self::$a + 10;
-  }
-	public function hello() {
-		echo "Hello<br />";
-	} 
-}
-class B extends A {
-  static function attr_test() {
-    echo parent::$a;
-  }
-  static function method_test() {
-    echo parent::modified_a();
-  }
-	public function instance_test() {
-		echo parent::hello();
-	}
-  public function hello() { 
-    echo "*******";
-    parent::hello();
-    echo "*******";
-  }
-}
+//This is a US phone formatter that works on more versions of numbers than any of the current answers.
+// https://stackoverflow.com/questions/4708248/formatting-phone-numbers-in-php
 
-echo B::$a . "<br />";
-echo B::modified_a() . "<br />";
+$numbers = explode("\n", '(111) 222-3333
+((111) 222-3333
+1112223333
+111 222-3333
+111-222-3333
+(111)2223333
++11234567890
+    1-8002353551
+    123-456-7890   -Hello!
++1 - 1234567890 
+');
 
-echo B::attr_test() ."<br />";
-echo B::method_test() . "<br />";
+$numbers =  explode("\n",'+1 562-924-7263');
 
-$object = new B();
-$object->instance_test();
-$object->hello();
+foreach($numbers as $number)
+{
+    print preg_replace('~.*(\d{3})[^\d]{0,7}(\d{3})[^\d]{0,7}(\d{4}).*~', '($1) $2-$3', $number). "\n";
+}        
+        
+
+$from = "tel:0001234567890";
+$from = "tel:0012223334444";
+$from = "+11234567890";         
+$from = "+12223334444";
+             
+$to1 = sprintf("%s-%s-%s",
+              substr($from, 2, 3),
+              substr($from, 5, 3),
+              substr($from, 8));
+$to2 = sprintf("tel:%s%s%s",
+              substr($from, 2, 3),
+              substr($from, 5, 3),
+              substr($from, 8));
+
+print "<br>".$to1;
+print "<br>".$to2;
 
 ?>
